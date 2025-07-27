@@ -84,14 +84,16 @@ After testing different features, the final models uses **10 key features** that
 ![Model Comparison](images/models.png)
 
 ### Test for Overfitting
-- **Overfitting Check**
-|  Model  | Train R²|  Test R²|  R² Gap | Test MAE | Test RMSE | Time (s)|
-|---------|---------|---------|---------|----------|-----------|---------|
-|  Gradient Boosting | 0.748 |  0.721 | 0.027 | 27.523 | 45.619 | 2.457 |
-|  XGBoost | 0.711 | 0.711 | -0.000 | 28.100 | 46.443 | 0.302 |
-|  LightGBM | 0.732 | 0.701 | 0.030 | 28.251 | 47.211 | 1.474 |
-|  Random Forest | 0.705 | 0.682 | 0.023 | 29.132 | 48.705 | 0.225 |
-|  Linear Regression | 0.383 | 0.402 | -0.019 | 42.059 | 66.834 | 0.023 |
+
+**Overfitting Check**
+
+| Model | Train R² | Test R² | R² Gap | Test MAE | Test RMSE | Time (s) |
+|-------|----------|---------|--------|----------|-----------|----------|
+| Gradient Boosting | 0.748 | 0.721 | 0.027 | 27.523 | 45.619 | 2.457 |
+| XGBoost | 0.711 | 0.711 | -0.000 | 28.100 | 46.443 | 0.302 |
+| LightGBM | 0.732 | 0.701 | 0.030 | 28.251 | 47.211 | 1.474 |
+| Random Forest | 0.705 | 0.682 | 0.023 | 29.132 | 48.705 | 0.225 |
+| Linear Regression | 0.383 | 0.402 | -0.019 | 42.059 | 66.834 | 0.023 |
 
 XGBoost has the lowest overfitting and significantly faster training time. I would choose this over Gradient boosting.
 Even though Gradient Boosting has better test R² it is slightly overfitted and a lot slower.
