@@ -36,14 +36,14 @@ This dataset contains listings web-scraped from airbnb through an open-source pr
 ## Feature Selection & Model Preprocessing
 
 ### **Feature Selection**
-
-**Check for multicollinearity**
+- **First i trained two baseline models with all features to get a general feature importance and start eliminating features**
+- **Then i made a pipeline with selektKbest and ran a GridSearch with different features in order to elimiate more features**
+- **Used RFE (Recurseive Feature Elimination) in order to find most important features**
+- **Checked for multicollinearity**
 
 ![Correlation Matrix](images/corr.png)
 
-Highly correlated features removed.
-
-**Train a Random Forest and XGBoost model for feature selection.**
+Highly correlated features were removed.
 
 After testing different features, the final models uses **10 key features** that demonstrated the highest predictive power:
 
@@ -72,8 +72,7 @@ After testing different features, the final models uses **10 key features** that
 - **One hot encoding** : for propery type column
 
 **Train/Test Split:**
-- **80/20 split** with stratified sampling by neighborhood
-- **Random state fixed** for reproducible results
+- **80/20 split** 
 - **Train/test/eval split** for XGBoost and LGBM for early stopping to reduce overfitting
 
 ## Model Training
